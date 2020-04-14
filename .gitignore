@@ -1,2 +1,4 @@
 .idea
 *.sqlite3
+gestao_rh2/__pycache__
+apps/__pycache__
