@@ -9,6 +9,8 @@
                         Ola {{ usuario.funcionario.nome }}
                         <br>
                         {{ usuario.funcionario.empresa.nome }}
+                        <br>
+                        <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionários</a>
                 </div>
                 <div class="col-sm">
                         Coluna 2
