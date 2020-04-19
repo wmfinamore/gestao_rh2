@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+    <h2>Documento</h2>
+    <br>
+    <br>
+    <!--
+    enctype deve ser definido quanto o formulário tiver campos do tipo
+    file, para que o arquivo seja carregado para execução do
+    método post.
+    -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+{% endblock %}
