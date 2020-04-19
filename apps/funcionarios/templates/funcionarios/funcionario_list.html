@@ -5,6 +5,13 @@
     Lista de Funcionários<br>
 
     {% for funcionario in object_list %}
-        <br>{{ funcionario }}<br>
+        <br>
+        <a href="{% url 'update_funcionario' funcionario.id %}">
+            {{ funcionario }}
+        </a>
+        <a href="{% url 'delete_funcionario' funcionario.id %}" class="btn btn-danger">Excluir</a>
+        <br>
     {% endfor %}
+    <br>
+    <a href="{% url 'create_funcionario' %}" class="btn btn-primary"> Novo </a>
 {% endblock %}
