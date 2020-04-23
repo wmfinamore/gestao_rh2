@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h2>Banco de Horas</h2>
+    <br>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        <h1>Você tem certeza que quer excluir o registro de hora extra para <strong>{{ object }}</strong> ?</h1>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+
+{% endblock %}
