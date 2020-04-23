@@ -34,16 +34,20 @@
             <th>Horas</th>
         </tr>
     </thead>
+<!--TODO: Alterar as linhas para serem links que levem o usuário ao formulário de edição do registro de hora extra-->
     <tbody>
         {% for registro_hora in object.registrohoraextra_set.all %}
         <tr>
             <th scope="row">{{ registro_hora.id }}</th>
-            <td>{{ registro_hora.motivo }} </td>
+            <td><a href="{% url 'update_hora_extra' registro_hora.id %}">
+                {{ registro_hora.motivo }} </a>
+            </td>
             <td>{{ registro_hora.horas }}</td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
 <br>
+<!--TODO: Alterar botão para levar usuário ao formulário de inclusão do registro de hora extra-->
 <a href="{% url 'create_documento' object.id %}" class="btn btn-dark">Adicionar Documento </a>
 {% endblock %}

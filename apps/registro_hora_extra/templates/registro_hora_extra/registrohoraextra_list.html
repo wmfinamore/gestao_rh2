@@ -7,7 +7,7 @@
 
     {% for registrohoraextra in object_list %}
         <br>
-        <a href="{% url 'update_hora_extra' registrohoraextra.id %}">
+        <a href="{% url 'update_hora_extra_base' registrohoraextra.id %}">
             {{ registrohoraextra }}
         </a>
 
