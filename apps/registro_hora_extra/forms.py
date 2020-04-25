@@ -8,7 +8,8 @@ class RegistroHoraExtraForm(ModelForm):
         super(RegistroHoraExtraForm, self).__init__(*args, **kwargs)
         self.fields['funcionario'].queryset = Funcionario.objects.filter(
             empresa=user.funcionario.empresa)
+        self.fields['utilizada'].disabled = True
 
     class Meta:
         model = RegistroHoraExtra
-        fields = ['funcionario', 'motivo', 'horas']
+        fields = ['funcionario', 'motivo', 'horas','utilizada']
