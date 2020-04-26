@@ -1,3 +1,4 @@
+import csv
 import json
 
 from django.contrib.auth.models import User
@@ -109,3 +110,26 @@ class HoraExtraFuncionario(CreateView):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
+
+
+class ExportarParaCSV(View):
+    def get(self, request):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachement; filename="somefilename.csv"'
+
+        empresa_logada = self.request.user.funcionario.empresa
+        registro_he = RegistroHoraExtra.objects.filter(utilizada=False, funcionario__empresa=empresa_logada)
+
+        writer = csv.writer(response)
+        writer.writerow(['id','motivo','funcionario','rest_func','horas','utilizada','empresa'])
+        for registro in registro_he:
+            writer.writerow([registro.id,
+                             registro.motivo,
+                             registro.funcionario.nome,
+                             registro.funcionario.total_horas_extra,
+                             registro.horas,
+                             registro.utilizada,
+                             registro.funcionario.empresa.nome,
+                             ])
+
+        return response
