@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0d62f73592e31d15cb3a9460fc8b0d4ef094dff85abb326fdf4940d18d82b4f0"
+            "sha256": "9792a2b1ded4e0508f137affae1e9b4a53321d308b34ee9357d11eef4a55d9a8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -31,6 +31,13 @@
             "index": "pypi",
             "version": "==3.4"
         },
+        "html5lib": {
+            "hashes": [
+                "sha256:20b159aa3badc9d5ee8f5c647e5efd02ed2a66ab8d354930bd9ff139fc1dc0a3",
+                "sha256:66cb0dcfdbbc4f9c3ba1a63fdb511ffdbd4f513b2b6d81b80cd26ce6b3fb3736"
+            ],
+            "version": "==1.0.1"
+        },
         "pillow": {
             "hashes": [
                 "sha256:04766c4930c174b46fd72d450674612ab44cca977ebbcc2dde722c6933290107",
@@ -57,6 +64,12 @@
                 "sha256:f784aad988f12c80aacfa5b381ec21fd3f38f851720f652b9f33facc5101cf4d"
             ],
             "version": "==7.1.2"
+        },
+        "pypdf2": {
+            "hashes": [
+                "sha256:e28f902f2f0a1603ea95ebe21dff311ef09be3d0f0ef29a3e44a932729564385"
+            ],
+            "version": "==1.26.0"
         },
         "pytz": {
             "hashes": [
@@ -111,12 +124,33 @@
             "index": "pypi",
             "version": "==3.5.42"
         },
+        "six": {
+            "hashes": [
+                "sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a",
+                "sha256:8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c"
+            ],
+            "version": "==1.14.0"
+        },
         "sqlparse": {
             "hashes": [
                 "sha256:022fb9c87b524d1f7862b3037e541f68597a730a8843245c349fc93e1643dc4e",
                 "sha256:e162203737712307dfe78860cc56c8da8a852ab2ee33750e33aeadf38d12c548"
             ],
             "version": "==0.3.1"
+        },
+        "webencodings": {
+            "hashes": [
+                "sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78",
+                "sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
+            ],
+            "version": "==0.5.1"
+        },
+        "xhtml2pdf": {
+            "hashes": [
+                "sha256:6793fbbdcb6bb8a4a70132966d8d95e95ea3498cdf0e82252d2b8e9aae34fcb5"
+            ],
+            "index": "pypi",
+            "version": "==0.2.4"
         }
     },
     "develop": {}

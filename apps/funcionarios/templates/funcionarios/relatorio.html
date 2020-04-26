@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load static %}
+
+{% block staticscss %}
+    <style>
+        .teste { color: red; }
+    </style>
+{% endblock %}
+
+{% block main %}
+    <h1 class="teste">Meu Relatório</h1>
+    <h2>{{ sales }}</h2>
+
+{% endblock %}

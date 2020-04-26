@@ -3,6 +3,7 @@ import io
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import (
     ListView,
     UpdateView,
@@ -10,6 +11,9 @@ from django.views.generic import (
     CreateView,
 )
 from reportlab.pdfgen import canvas
+
+from django.template.loader import get_template
+import xhtml2pdf.pisa as pisa
 
 from .models import Funcionario
 
@@ -71,3 +75,33 @@ def relatorio_funcionarios(request):
     response.write(pdf)
 
     return response
+
+
+class Render:
+
+    @staticmethod
+    def render(path: str, params: dict, filename: str):
+        template = get_template(path)
+        html = template.render(params)
+        response = io.BytesIO()
+        pdf = pisa.pisaDocument(
+            io.BytesIO(html.encode("UTF-8")),response)
+        if not pdf.err:
+            response = HttpResponse(
+                response.getvalue(), content_type='application/pdf'
+            )
+            response['Content-Disposition'] = 'attachement;filename=%s.pdf' % filename
+            return response
+        else:
+            return HttpResponse("Error Rendering PDF", status=400)
+
+
+class Pdf(View):
+
+    def get(self, request):
+        params = {
+            'today': 'Variavel today',
+            'sales': 'Variavel sales',
+            'request': request,
+        }
+        return Render.render('funcionarios/relatorio.html', params, 'myfile')
