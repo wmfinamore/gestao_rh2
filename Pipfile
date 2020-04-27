@@ -11,6 +11,7 @@ django-bootstrap-form = "*"
 reportlab = "*"
 xhtml2pdf = "*"
 xlwt = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"
