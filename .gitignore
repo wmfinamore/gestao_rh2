@@ -5,3 +5,5 @@ gestao_rh2/__pycache__
 gestao_rh2/__pycache__/urls.cpython-37.pyc
 apps/__pycache__
 *.pdf
+
+local_settings.py

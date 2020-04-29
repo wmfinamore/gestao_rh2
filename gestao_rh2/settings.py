@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'apps.documentos',
     'apps.registro_hora_extra',
     'bootstrapform',
+    'apps.app_antiga',
 ]
 
 MIDDLEWARE = [
@@ -59,14 +60,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gestao_rh2.wsgi.application'
 
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -113,3 +106,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 LOGIN_REDIRECT_URL = 'home'
 
 LOGOUT_REDIRECT_URL = 'login'
+
+
+DATABASE_ROUTERS = ['gestao_rh2.DBRoutes.DBRoutes']
+
+
+from .local_settings import *
