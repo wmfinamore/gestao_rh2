@@ -11,18 +11,47 @@
                         <br>
 
                 </div>
-                <div class="col-sm">
-
-                </div>
-<!--                <div class="col-sm">-->
-<!--                        <a href="{% url 'logout' %}">Logout</a>-->
-<!--                        <br>-->
-<!--                        <br>-->
-<!--                        {% if usuario.funcionario.empresa %}-->
-<!--                              <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar Empesa</a>-->
-<!--                        {% else %}-->
-<!--                               <a href="{% url 'create_empresa' %}">Criar Empesa</a>-->
-<!--                        {% endif %}-->
-<!--                </div>-->
         </div>
+
+        <div class="row">
+
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h2>
+                            <i class="fa fa-users" style="font-size:48px;
+                            color:blue"></i>Empregados
+                        </h2>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h2>
+                            <i class="fa fa-clock-o" style="font-size:48px;
+                            color:blue"></i>Banco de Horas
+                        </h2>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h2>
+                            <i class="fa fa-book" style="font-size:48px;
+                            color:blue"></i>Relatórios
+                        </h2>
+                    </div>
+                </div>
+         </div>
+        <div clas="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <h5 class="card-title">Funcionário</h5>
+                    <ul>
+                        <li>N. funcionarios: {{ total_funcionarios }}</li>
+                        <li>N. func. de ferias: {{ total_funcionarios_ferias }}</li>
+                        <li>N. func. de doc pendentes: {{ total_funcionarios_doc_pendentes }} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
 {% endblock %}
+
